@@ -1,77 +1,67 @@
-# Blog OS (Async/Await)
+# Helios
 
-[![Build Status](https://github.com/phil-opp/blog_os/workflows/Code/badge.svg?branch=post-12)](https://github.com/phil-opp/blog_os/actions?query=workflow%3A%22Code%22+branch%3Apost-12)
+Helios is an innovative operating system that integrates local AI models with built-in powertools for Solana blockchain development and Pump Fun deployment capabilities. Currently under active development.
 
-This repository contains the source code for the [Async/Await][post] post of the [Writing an OS in Rust](https://os.phil-opp.com) series.
+## Overview
 
-[post]: https://os.phil-opp.com/async-await/
+Helios aims to create a seamless development environment where AI capabilities are built directly into the operating system layer, enabling powerful local AI processing while maintaining user privacy and control. The system includes specialized tools for blockchain development, particularly focused on the Solana ecosystem.
 
-**Check out the [master branch](https://github.com/phil-opp/blog_os) for more information.**
+## Features
 
-## Building
+### Local AI Integration
+- Built-in support for local AI model execution
+- Privacy-focused architecture keeping AI processing on-device
+- Integrated AI assistants for development workflows
 
-This project requires a nightly version of Rust because it uses some unstable features. At least nightly _2020-07-15_ is required for building. You might need to run `rustup update nightly --force` to update to the latest nightly even if some components such as `rustfmt` are missing it.
+### Blockchain Development Tools
+- Native Solana development environment
+- Built-in powertools for smart contract development
+- Streamlined deployment process to Pump Fun
+- Integrated blockchain debugging tools
 
-You can build the project by running:
+### System Architecture
+- Custom kernel written in Rust
+- Optimized for AI workload processing
+- Secure by design with blockchain integration
+- Modern async/await support
 
-```
-cargo build
-```
+## Current Status
 
-To create a bootable disk image from the compiled kernel, you need to install the [`bootimage`] tool:
+This project is currently under development in a private repository. The core features are being actively developed and tested. Public releases will be announced when ready.
 
-[`bootimage`]: https://github.com/rust-osdev/bootimage
+## Building from Source
 
-```
-cargo install bootimage
-```
+### Prerequisites
+- Nightly Rust toolchain (minimum version requirements TBA)
+- Additional dependencies will be documented as the project matures
 
-After installing, you can create the bootable disk image by running:
-
-```
-cargo bootimage
-```
-
-This creates a bootable disk image in the `target/x86_64-blog_os/debug` directory.
-
-Please file an issue if you have any problems.
-
-## Running
-
-You can run the disk image in [QEMU] through:
-
-[QEMU]: https://www.qemu.org/
-
-```
-cargo run
+### Build Instructions
+```bash
+# Build instructions will be added as the project stabilizes
 ```
 
-[QEMU] and the [`bootimage`] tool need to be installed for this.
+## Development Roadmap
 
-You can also write the image to an USB stick for booting it on a real machine. On Linux, the command for this is:
+- [ ] Core OS kernel implementation
+- [ ] Local AI model integration
+- [ ] Solana development tools integration
+- [ ] Pump Fun deployment pipeline
+- [ ] User interface and experience
+- [ ] Documentation and tutorials
+- [ ] Public release
 
-```
-dd if=target/x86_64-blog_os/debug/bootimage-blog_os.bin of=/dev/sdX && sync
-```
+## Contributing
 
-Where `sdX` is the device name of your USB stick. **Be careful** to choose the correct device name, because everything on that device is overwritten.
-
-## Testing
-
-To run the unit and integration tests, execute `cargo xtest`.
+As this project is currently in private development, contribution guidelines will be provided when the repository becomes public.
 
 ## License
 
-Licensed under either of
+License terms will be specified upon public release.
 
-- Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or
-  http://www.apache.org/licenses/LICENSE-2.0)
-- MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
+## Contact
 
-at your option.
+Project contact information and community channels will be announced with the public release.
 
-Note that this only applies to this git branch, other branches might be licensed differently.
+---
 
-### Contribution
-
-Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in the work by you, as defined in the Apache-2.0 license, shall be dual licensed as above, without any additional terms or conditions.
+**Note:** This project is under active development. Features, requirements, and documentation will be updated as development progresses.
